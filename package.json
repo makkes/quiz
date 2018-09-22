@@ -12,7 +12,9 @@
   "dependencies": {
     "register-service-worker": "^1.0.0",
     "vue": "^2.5.17",
+    "vue-flashcard": "^1.1.6",
     "vue-router": "^3.0.1",
+    "vue2-hammer": "^2.0.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
