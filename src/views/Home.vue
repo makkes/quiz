@@ -54,10 +54,10 @@ export default {
   },
   methods: {
     onSwipe(ev) {
-      if(ev.direction === 8) { // up
-      this.remembered += 1;
-      this.showNextCard();
-      } else if(ev.direction === 16)  { // down
+      if (ev.direction === 8) { // up
+        this.remembered += 1;
+        this.showNextCard();
+      } else if (ev.direction === 16) { // down
         this.notKnown += 1;
         this.showNextCard();
       }
@@ -72,7 +72,7 @@ export default {
       if (this.current === this.questions.length - 1) {
         this.finished = true;
         var pastScores = window.localStorage.getItem('scores:test');
-        if(pastScores) {
+        if (pastScores) {
           pastScores = JSON.parse(pastScores);
         } else {
           pastScores = [];
@@ -80,7 +80,6 @@ export default {
         pastScores.push([this.remembered, this.notKnown]);
         window.localStorage.setItem('scores:test', JSON.stringify(pastScores));
       } else {
-
         this.current += 1;
       }
     },
@@ -91,7 +90,7 @@ export default {
   },
   created: function() {
     fetch('/fragen.json').then(res => {
-      if(res.ok) {
+      if (res.ok) {
         res.json().then(questions => {
           this.questions = questions;
         });
