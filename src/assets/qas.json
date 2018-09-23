@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Testfragen",
+        "id": "testfragen",
+        "qas": [
+            {
+                "q": "Warum ist die Banane krumm?",
+                "a": "Darum"
+            },
+            {
+                "q": "Wer ist der Mörder?",
+                "a": "Der Gärtner"
+            },
+            {
+                "q": "Was ist die Quadratwurzel aus 25?",
+                "a": "5"
+            }
+        ]
+    },
+    {
+        "title": "Englische Vokabeln (en->de)",
+        "id": "vocen",
+        "qas": [
+            {
+                "q": "accomodation",
+                "a": "die Unterkunft Pl.: die Unterkünfte"
+            }
+        ]
+    }
+]

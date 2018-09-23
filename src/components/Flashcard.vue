@@ -1,20 +1,16 @@
 <template>
     <div>
         <div @click="isToggle=!isToggle" v-bind:style="{backgroundColor: colorFront, color: colorTextFront}" v-show="!isToggle" class="animated flipInX flashcard">
-            <div class="card-header" style="padding-bottom: 15px;"> {{headerFront}} </div>
-            <div class="card-content center">
+            <div class="flashcard-content center">
                 <p v-bind:style="{fontSize: textSizeFront,fontWeight: 'bold'}">{{front}}</p>
                 <img v-if="imgFront!=''" :src="imgFront" width="200" height="200">
             </div>
-            <div class="card-footer">{{footerFront}}</div>
         </div>
         <div @click="isToggle=!isToggle" v-bind:style="{backgroundColor: colorBack, color: colorTextBack}" v-show="isToggle" class="animated flipInX flashcard">
-            <div class="card-header" style="padding-bottom: 15px;"> {{headerBack}}</div>
-            <div class="card-content center">
+            <div class="flashcard-content center">
                 <p v-bind:style="{fontSize: textSizeBack, fontWeight: 'bold'}">{{back}}</p>
                 <img v-if="imgBack!=''" :src="imgBack" width="200" height="200">
             </div>
-            <div class="card-footer">{{footerBack}}</div>
         </div>
     </div>
 </template>
@@ -54,11 +50,11 @@ export default {
     },
     textSizeFront: {
       type: String,
-      default: '2em'
+      default: '1em'
     },
     textSizeBack: {
       type: String,
-      default: '2em'
+      default: '1em'
     },
     colorTextFront: {
       type: String,
@@ -75,27 +71,15 @@ export default {
     colorBack: {
       type: String,
       default: '#2ecc71'
-    },
-    headerFront: {
-      type: String,
-      default: ''
-    },
-    headerBack: {
-      type: String,
-      default: ''
-    },
-    footerFront: {
-      type: String,
-      default: ''
-    },
-    footerBack: {
-      type: String,
-      default: ''
     }
   }
 }
 </script>
 <style scoped>
+.flashcard-content {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 .center {
     text-align: center;
 }
