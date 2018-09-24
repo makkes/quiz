@@ -7,7 +7,7 @@
         class="fcard"
         ref="card"
         :front="quiz.qas[current].q"
-        :back="quiz.qas[current].a"></flashcard>
+        :back="format(quiz.qas[current].a)"></flashcard>
       <div v-else>
         <h1 class="title">Das war's</h1>
         <h2 class="subtitle">Du hast {{remembered}} {{remembered===1 ? "Antwort" : "Antworten"}} gewusst, das sind {{rememberedPct}}%.</h2>
@@ -45,6 +45,9 @@ export default {
     }
   },
   methods: {
+    format(s) {
+        return s.replace(/\n/g, '<br/>');
+    },
     onSwipe(ev) {
       if (ev.direction === 8) { // up
         this.remembered += 1;
@@ -75,10 +78,6 @@ export default {
         this.current += 1;
       }
     },
-    showPreviousCard() {
-      this.current =
-        this.current === 0 ? this.quiz.qas.length - 1 : this.current - 1;
-    }
   },
   created: function() {
     document.addEventListener('keypress', ev => {

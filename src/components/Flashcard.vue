@@ -2,13 +2,13 @@
     <div>
         <div @click="isToggle=!isToggle" v-bind:style="{backgroundColor: colorFront, color: colorTextFront}" v-show="!isToggle" class="animated flipInX flashcard">
             <div class="flashcard-content center">
-                <p v-bind:style="{fontSize: textSizeFront,fontWeight: 'bold'}">{{front}}</p>
+                <p v-bind:style="{fontSize: textSizeFront,fontWeight: 'bold'}" v-html="front"></p>
                 <img v-if="imgFront!=''" :src="imgFront" width="200" height="200">
             </div>
         </div>
         <div @click="isToggle=!isToggle" v-bind:style="{backgroundColor: colorBack, color: colorTextBack}" v-show="isToggle" class="animated flipInX flashcard">
             <div class="flashcard-content center">
-                <p v-bind:style="{fontSize: textSizeBack, fontWeight: 'bold'}">{{back}}</p>
+                <p v-bind:style="{fontSize: textSizeBack, fontWeight: 'bold'}" v-html="back"></p>
                 <img v-if="imgBack!=''" :src="imgBack" width="200" height="200">
             </div>
         </div>
