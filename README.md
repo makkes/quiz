@@ -1,31 +1,22 @@
-# flashcards
+# A very simple flashcards quiz SPA
 
-## Project setup
-```
-npm install
-```
+This is a quiz web application that consists of just HTML/JS/CSS and served from
+a primitive web server. All quizzes are stored in a JSON file. Each quiz
+consists of one or more questions presented as flashcards for users to learn and
+remember. Perfect for learning vocabulary, bible verses or for challenging
+your colleagues' technical skills.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+# Installation
 
-### Compiles and minifies for production
-```
-npm run build
-```
+You'll need [Vue CLI](https://cli.vuejs.org/):
 
-### Lints and fixes files
 ```
-npm run lint
+npm install -g @vue/cli
 ```
 
-### Run your unit tests
-```
-npm run test:unit
-```
+Then just run `npm run serve` and you're up and running. Edit
+[qas.json](src/assets/qas.json) to add a new quiz or remove/edit the existing
+ones.
 
-### Run your end-to-end tests
-```
-npm run test:e2e
-```
+When you're ready to deploy your quiz to a web server, run `npm run build` and
+copy the resulting files from `dist/` to the web server's root.
